@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.block{
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+}
+
+.block > div{
+  background-color: rgb(46, 46, 46);
+  width: 700px;
+  position: relative;
+  left: -50%;
+  z-index: 1;
+}
+
+.block > div:nth-child(2){
+  left: -100%;  
+  background-color: #fff;
+  clip-path: polygon(65% 0%, 100% 50%, 65% 100%, 0% 100%, 40% 50%, 0% 0%);
+  width: 700px;
+  z-index: 2;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 0 40px;
+}
+
+.block > div:nth-child(3){
+  left: -100%;
+  width: 80vw;
+  min-width: 1000px;
+  background: url('http://wonderfulengineering.com/wp-content/uploads/2016/01/beach-wallpaper-14.jpg') 100% 50% / cover;
+  z-index: 0;
+}
+
+.line{
+  width: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: -2%;
+  height: 56%;
+  right: 32%;
+  transform: rotate(-42deg);
+}
+
+.margin{
+  margin-left: 120px;
+}
+.margin:first-child{
+  margin-top: 60px;
+}
+.margin *:not(.margin){
+  margin-bottom: 40px;
+}
+.item{
+  max-width: 200px;
+  position: relative;
+  padding-left: 20px;
+  font-size: 12px;
+}
+.item::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 3px;
+  left: 0;
+  top: -20px;
+  height: 40px;
+  background-color: black;
+}
+.title{
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+.title span:last-child{
+  display: block;
+  margin-left: 30px;
+}
